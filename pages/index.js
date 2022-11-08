@@ -8,6 +8,7 @@ import { StyledFavorites } from "../src/components/Favorites";
 
 function HomePage() {
         const [valorDoFiltro, setValorDoFiltro] = React.useState("");
+    return (
         <>
         <CSSReset />
         <div style={{
