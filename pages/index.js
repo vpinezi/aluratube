@@ -6,6 +6,11 @@ import { StyledTimeline } from "../src/components/TimeLine";
 import { StyledFavorites } from "../src/components/Favorites";
 
 function HomePage() {
+<<<<<<< Updated upstream
+=======
+    const [valorDoFiltro, setValorDoFiltro] = React.useState("");
+
+>>>>>>> Stashed changes
     return (
         <>
         <CSSReset />
