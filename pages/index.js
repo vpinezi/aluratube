@@ -46,7 +46,7 @@ const StyledHeader = styled.div`
         align-items: center;
         justify-content: center;
         background: #f5f7f8;
-        width: 1512px;
+        width: 100%;
         height: 230px;
         object-fit: cover;
         
@@ -56,7 +56,7 @@ const StyledHeader = styled.div`
         top: 56px;
         border-radius: 0%;
         display: block; 
-        width: 1512px;
+        width: 100%;
         height: 230px;
         object-fit: cover;
         object-position: 50% 50%;
