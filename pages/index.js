@@ -1,3 +1,4 @@
+import React from "react";
 import config from "../config.json";
 import styled from "styled-components";
 import { CSSReset } from "../src/components/CSSReset";
@@ -6,12 +7,7 @@ import { StyledTimeline } from "../src/components/TimeLine";
 import { StyledFavorites } from "../src/components/Favorites";
 
 function HomePage() {
-<<<<<<< Updated upstream
-=======
-    const [valorDoFiltro, setValorDoFiltro] = React.useState("");
-
->>>>>>> Stashed changes
-    return (
+        const [valorDoFiltro, setValorDoFiltro] = React.useState("");
         <>
         <CSSReset />
         <div style={{
@@ -19,10 +15,10 @@ function HomePage() {
                 flexDirection: "column",
                 flex: 1
             }}>
-            <Menu />
+            <Menu valorDoFiltro={valorDoFiltro} setValorDoFiltro={setValorDoFiltro}/>
             <Header />
-            <TimeLine playlists={config.playlists}/>
-            <Favorites Favorites={config.favorites} />
+            <TimeLine searchValue={valorDoFiltro} playlists={config.playlists}/>
+            <Favorites favorites={config.favorites} />
         </div>
         </>
         
@@ -39,7 +35,6 @@ const StyledHeader = styled.div`
         border-radius: 50%;
     }
     .user-info {
-        margin-top: 10px;
         display: flex;
         align-items: center;
         width: 100%;
@@ -65,12 +60,21 @@ const StyledHeader = styled.div`
         height: 230px;
         object-fit: cover;
         object-position: 50% 50%;
+        src: url(${({ bg }) => bg });
     }
+`;
+
+const StyledBanner = styled.div`
+    background-color: blue;
+    height: 230px;
+    //background-image: url(${config.banner});
+    background-image: url(${({ bg }) => bg });
 `;
 
 function Header(){
     return (
         <StyledHeader>
+            {/* <StyledBanner bg={config.banner}/> */}
             <div className="container">
                 <img className="banner" src={config.banner} />
             </div> 
@@ -89,7 +93,7 @@ function Header(){
     )
 }
 
-function TimeLine(props){
+function TimeLine({searchValue, ...props}){
     //console.log("Dentro do componente", props);
     const playlistNames = Object.keys(props.playlists);
 
@@ -98,13 +102,17 @@ function TimeLine(props){
             {playlistNames.map((playlistName) => {
                 const videos = props.playlists[playlistName];
                 return (
-                    <section>
+                    <section key={playlistName}>
                         <h2>{playlistName}</h2>
                         <div>
                             {
-                                videos.map((video) => {
+                                videos.filter((video) => {
+                                    const titleNormalized = video.title.toLowerCase();
+                                    const searchValueNormalized = searchValue.toLowerCase();
+                                    return titleNormalized.includes(searchValueNormalized)
+                                }).map((video) => {
                                     return(
-                                        <a href={video.url}>
+                                        <a key={video.url} href={video.url}>
                                             <img src={video.thumb}/>
                                             <span>
                                                 {video.title}
@@ -123,17 +131,17 @@ function TimeLine(props){
 
 function Favorites(props){
     //console.log("Dentro do componente", props.Favorites);
-    const favorites = props.Favorites;
+    const favorites = props.favorites;
 
     return (
         <StyledFavorites>
             <h2>AluraTube Favoritos</h2>
-            <section>
+            <section key ={favorites.name}>
                 <div>
                     {
                         favorites.map((favorite) => {
                             return(
-                                <a href={favorite.url}>
+                                <a key={favorite.url} href={favorite.url}>
                                     <img src={favorite.thumb} />
                                     <span>
                                         {favorite.name}
