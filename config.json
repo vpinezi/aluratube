@@ -4,13 +4,13 @@
     "github": "vpinezi",
     "banner": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80",
     "favorites": [
-       { "name": "Daniel Pinheiro",
-        "url": "https://www.youtube.com/c/DanielPinheiroo",
-        "thumb": "https://yt3.ggpht.com/wU5qCi_YI6EuRmwbY-DXlWXPesr61cbwlPJU9R3u2NEdXLoJGuEAGAr5mcQpwAqMxMKECq1G5Q=s88-c-k-c0x00ffffff-no-rj"
+       { "name": "@gafischer",
+        "url": "https://github.com/gafischer",
+        "thumb": "https://github.com/gafischer.png"
       },
-      { "name": "Manual do Mundo",
-        "url": "https://www.youtube.com/c/manualdomundo",
-        "thumb": "https://yt3.ggpht.com/-pJxUP1wezj8SREiWAyEzlusc9_PIiMp-QBa5OAmx8w2iHvczS_Krl-MAPYIidgcFy8lpI2L4ow=s88-c-k-c0x00ffffff-no-rj"
+      { "name": "@victorfinotelli",
+        "url": "https://github.com/victorfinotelli",
+        "thumb": "https://github.com/victorfinotelli.png"
       }
     ],
     "playlists": {
