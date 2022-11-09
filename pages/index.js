@@ -7,7 +7,6 @@ import { StyledFavorites } from "../src/components/Favorites";
 
 function HomePage() {
     const [valorDoFiltro, setValorDoFiltro] = React.useState("");
-
     return (
         <>
         <div style={{
@@ -62,16 +61,16 @@ const StyledHeader = styled.div`
         height: 230px;
         object-fit: cover;
         object-position: 50% 50%;
-        src: url(${({ bg }) => bg });
+        //src: url(${({ bg }) => bg });
     }
 `;
 
-const StyledBanner = styled.div`
-    background-color: blue;
-    height: 230px;
-    //background-image: url(${config.banner});
-    background-image: url(${({ bg }) => bg });
-`;
+// const StyledBanner = styled.div`
+//     background-color: blue;
+//     height: 230px;
+//     //background-image: url(${config.banner});
+//     background-image: url(${({ bg }) => bg });
+// `;
 
 function Header(){
     return (
